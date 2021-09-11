@@ -24,7 +24,6 @@ def f2l(formula_, symbols_=["x"]):
     formula = formula.replace("asinh", "arsinh")
     formula = formula.replace("acosh", "arccosh")
     formula = formula.replace("atanh", "arctanh")
-    formula = re.sub(r"(\d)([^\d*])", r"\1*\2", formula)
     # mul converter
     formula = re.sub(rf"\)\(", rf")*(", formula)  # )(
     for s in symbols:
