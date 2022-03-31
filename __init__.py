@@ -25,7 +25,7 @@ def f2l(formula_, symbols_=["x"]):
     formula = formula.replace("acosh", "arccosh")
     formula = formula.replace("atanh", "arctanh")
     # mul converter
-    formula = re.sub(rf"\)\(", rf")*(", formula)  # )(
+    formula = formula.replace(")(", ")*(")
     for s in symbols:
         formula = re.sub(rf"{s}\*\*(\d+)", rf"({s}**\1)", formula)
         while True:
